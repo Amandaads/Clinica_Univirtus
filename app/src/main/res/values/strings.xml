@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Clinica_Univirtus</string>
+    <string name="cadastro">Cadastro de paciente</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="cpf">CPF</string>
+    <string name="telefone">Telefone</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="confirme_senha">Confirme a senha</string>
+    <string name="rua">Rua</string>
+    <string name="numero">Numero</string>
+    <string name="cidade">Cidade</string>
+    <string name="bairro">Bairro</string>
+    <string name="uf">UF</string>
+    <string name="cep">CEP</string>
+    <string name="botaoCadastro">Cadastro</string>
+    <string name="ja_possui_conta">Já tem uma conta? Faça Login</string>
 </resources>
