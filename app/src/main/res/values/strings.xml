@@ -20,4 +20,9 @@
     <string name="entrar">Entrar</string>
     <string name="nao_tem_conta">Não tem uma conta? Cadastre-se</string>
     <string name="esqueceu_senha">Esqueceu a senha?</string>
+    <string name="paciente">Paciente</string>
+    <string name="sair">Sair</string>
+    <string name="contato">Contato</string>
+    <string name="agendar">Agendar</string>
+    <string name="agendamentos">Agendamentos</string>
 </resources>
