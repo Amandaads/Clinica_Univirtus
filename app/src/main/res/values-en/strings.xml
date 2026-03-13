@@ -17,4 +17,8 @@
     <string name="cep">Zip Code</string>
     <string name="botaoCadastro">Register</string>
     <string name="ja_possui_conta">Do you already have an account? Log in!</string>
+    <string name="conectado">Stay connected</string>
+    <string name="entrar">Enter</string>
+    <string name="nao_tem_conta">Don\'t have an account? Sign up.</string>
+    <string name="esqueceu_senha">Forgot your password?</string>
 </resources>

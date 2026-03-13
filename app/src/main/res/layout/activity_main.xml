@@ -344,6 +344,7 @@
         android:id="@+id/btn_cadastro"
         android:layout_width="372dp"
         android:layout_height="39dp"
+        android:backgroundTint="@color/green"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"

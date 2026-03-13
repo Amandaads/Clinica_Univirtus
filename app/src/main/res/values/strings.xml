@@ -15,5 +15,9 @@
     <string name="uf">UF</string>
     <string name="cep">CEP</string>
     <string name="botaoCadastro">Cadastro</string>
-    <string name="ja_possui_conta">Já tem uma conta? Faça Login</string>
+    <string name="ja_possui_conta">Já tem uma conta? Faça login</string>
+    <string name="conectado">Manter conectado</string>
+    <string name="entrar">Entrar</string>
+    <string name="nao_tem_conta">Não tem uma conta? Cadastre-se</string>
+    <string name="esqueceu_senha">Esqueceu a senha?</string>
 </resources>
