@@ -18,7 +18,7 @@
     <string name="ja_possui_conta">Já tem uma conta? Faça login</string>
     <string name="conectado">Manter conectado</string>
     <string name="entrar">Entrar</string>
-    <string name="nao_tem_conta">Não tem uma conta? Cadastre-se</string>
+    <string name="nao_tem_conta">Não tem uma conta?</string>
     <string name="esqueceu_senha">Esqueceu a senha?</string>
     <string name="paciente">Paciente</string>
     <string name="sair">Sair</string>
@@ -26,4 +26,5 @@
     <string name="agendar">Agendar</string>
     <string name="agendamentos">Agendamentos</string>
     <string name="data_nascimento">Data de Nascimento</string>
+    <string name="cadastro_login">Cadastre-se</string>
 </resources>
