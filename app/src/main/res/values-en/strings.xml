@@ -19,11 +19,12 @@
     <string name="ja_possui_conta">Do you already have an account? Log in!</string>
     <string name="conectado">Stay connected</string>
     <string name="entrar">Enter</string>
-    <string name="nao_tem_conta">Don\'t have an account? Sign up.</string>
+    <string name="nao_tem_conta">Don\'t have an account?</string>
     <string name="esqueceu_senha">Forgot your password?</string>
     <string name="paciente">Patient</string>
     <string name="sair">Logout</string>
     <string name="contato">Contact</string>
     <string name="agendar">Schedule</string>
     <string name="agendamentos">Appointments</string>
+    <string name="cadastro_login">Sign up</string>
 </resources>

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/black"
+    android:background="#F0F4FA"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -19,12 +19,12 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_app" />
+        app:srcCompat="@drawable/logo_login" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_login"
         android:layout_width="350dp"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:layout_marginTop="28dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
@@ -47,18 +47,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/edit_email"
-                android:layout_width="290dp"
-                android:layout_height="49dp"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_email_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:ems="10"
                 android:inputType="textEmailAddress"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_email" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/txt_senha"
@@ -68,40 +80,53 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/senha"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_email" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_email_constraint" />
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="290dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_senha_login_constraint"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:ems="10"
                 android:inputType="numberPassword"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_senha" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_senha">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_senha_login"
+                    android:inputType="numberPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/checkBox_manter_conectado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/conectado"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_senha_login_constraint" />
 
             <TextView
                 android:id="@+id/txt_esqueci_senha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="@color/blue"
                 android:layout_marginTop="30dp"
                 android:text="@string/esqueceu_senha"
+                android:textColor="@color/blue_link"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/checkBox"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+                app:layout_constraintStart_toEndOf="@+id/checkBox_manter_conectado"
+                app:layout_constraintTop_toBottomOf="@+id/edit_senha_login_constraint" />
 
             <Button
                 android:id="@+id/btn_entrar"
@@ -110,11 +135,12 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/entrar"
                 android:backgroundTint="@color/green"
+                android:text="@string/entrar"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/checkBox_manter_conectado" />
 
             <TextView
                 android:id="@+id/txt_naoTemConta_cadastro"
@@ -125,7 +151,19 @@
                 android:layout_marginEnd="20dp"
                 android:text="@string/nao_tem_conta"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.205"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_entrar" />
+
+            <TextView
+                android:id="@+id/txt_cadastro_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/cadastro_login"
+                android:textColor="@color/blue_link"
+                app:layout_constraintStart_toEndOf="@+id/txt_naoTemConta_cadastro"
                 app:layout_constraintTop_toBottomOf="@+id/btn_entrar" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
