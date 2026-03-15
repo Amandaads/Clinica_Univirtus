@@ -26,4 +26,5 @@
     <string name="contato">Contact</string>
     <string name="agendar">Schedule</string>
     <string name="agendamentos">Appointments</string>
+    <string name="data_nascimento">Birth Date</string>
 </resources>
