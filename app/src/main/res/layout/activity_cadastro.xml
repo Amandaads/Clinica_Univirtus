@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
 
 
-    tools:context=".MainActivity">
+    tools:context=".CadastroActivity">
 
     <ImageView
         android:id="@+id/logo_app_background"
@@ -28,7 +28,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="32dp"
         android:text="@string/cadastro"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,7 +69,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         android:ems="10"
-        android:hint="@string/nome"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nome" />
@@ -92,7 +91,6 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="@string/sobrenome"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edit_nome"
@@ -225,7 +223,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         android:ems="10"
-        android:hint="Independencia"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_rua" />
@@ -247,7 +244,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         android:ems="10"
-        android:hint="5"
         android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/edit_rua"
         app:layout_constraintTop_toBottomOf="@+id/txt_numeroCasa" />
@@ -269,7 +265,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         android:ems="10"
-        android:hint="Curitiba"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_cidade" />
@@ -291,7 +286,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         android:ems="10"
-        android:hint="Boa vista"
         android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/edit_cidade"
         app:layout_constraintTop_toBottomOf="@+id/txt_bairro" />
@@ -323,7 +317,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         android:ems="10"
-        android:hint="PR"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_uf" />
@@ -335,7 +328,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         android:ems="10"
-        android:hint="69300-547"
         android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/edit_uf"
         app:layout_constraintTop_toBottomOf="@+id/txt_cep" />
