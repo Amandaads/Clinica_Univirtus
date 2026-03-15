@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "446908152644",
+    "project_id": "clinica-univirtus",
+    "storage_bucket": "clinica-univirtus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446908152644:android:42c7d4228cb6cf1be1f511",
+        "android_client_info": {
+          "package_name": "com.example.clinica_univirtus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqX15pFmDS-JtkjPGiXzEF8y1uBciejac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
