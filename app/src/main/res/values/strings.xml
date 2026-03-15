@@ -25,4 +25,5 @@
     <string name="contato">Contato</string>
     <string name="agendar">Agendar</string>
     <string name="agendamentos">Agendamentos</string>
+    <string name="data_nascimento">Data de Nascimento</string>
 </resources>
