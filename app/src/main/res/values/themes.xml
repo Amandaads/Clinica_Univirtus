@@ -3,6 +3,8 @@
     <style name="Base.Theme.Clinica_Univirtus" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blue_link</item>
+        <item name="android:textColorHighlight">@color/blue_link</item>
     </style>
 
     <style name="Theme.Clinica_Univirtus" parent="Base.Theme.Clinica_Univirtus" />
