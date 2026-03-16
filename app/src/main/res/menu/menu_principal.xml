@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:title="Início"
+        android:id="@+id/item_inicio"
+        android:icon="@drawable/icone_menu_inicio" />
+    <item
         android:title="Contato"
         android:id="@+id/item_contato"
         android:icon="@drawable/icone_menu_contato" />
