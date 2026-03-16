@@ -15,14 +15,14 @@
         android:layout_height="300dp"
         android:layout_marginBottom="8dp"
         android:alpha="0.1"
+        android:contentDescription="@string/logo_transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506"
-        app:srcCompat="@drawable/logo_app"
-        android:contentDescription="@string/logo_transparente"/>
+        app:srcCompat="@drawable/logo_app" />
 
 
     <androidx.cardview.widget.CardView
@@ -44,10 +44,10 @@
                 android:layout_height="56dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/logo_icon"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo_titulo_pagina"
-                android:contentDescription="@string/logo_icon"/>
+                app:srcCompat="@drawable/logo_titulo_pagina" />
 
             <TextView
                 android:id="@+id/titulo_cadastro"
@@ -80,7 +80,6 @@
         android:layout_width="173dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:inputType="text"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
@@ -93,14 +92,15 @@
             android:id="@+id/edit_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:inputType="textPersonName"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/txt_sobrenome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
+        android:layout_marginStart="152dp"
         android:layout_marginTop="100dp"
         android:labelFor="@+id/edit_sobrenome"
         android:text="@string/sobrenome"
@@ -109,18 +109,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_sobrenome_constraint"
-        android:layout_width="193dp"
+        android:layout_width="189dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="text"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/edit_nome_constraint"
         app:layout_constraintTop_toBottomOf="@+id/txt_sobrenome">
 
@@ -128,6 +128,7 @@
             android:id="@+id/edit_sobrenome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPersonName"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -175,15 +176,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextPhone_constraint"
-        android:layout_width="193dp"
+        android:layout_width="189dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:inputType="phone"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/edit_data_nascimento_constraint"
         app:layout_constraintTop_toBottomOf="@+id/txt_telefone">
 
@@ -207,15 +211,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_email_constraint"
-        android:layout_width="384dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_email">
 
@@ -229,25 +235,27 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_senha_constraint"
-        android:layout_width="201dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="200dp"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/hint_senha"
-        android:inputType="numberPassword"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:endIconMode="password_toggle"
         app:hintTextColor="@color/cinza_hint"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/edit_cpf_constraint"
         app:layout_constraintTop_toBottomOf="@+id/txt_senha">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -255,7 +263,7 @@
         android:id="@+id/txt_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="204dp"
         android:layout_marginTop="16dp"
         android:text="@string/senha"
         app:layout_constraintStart_toStartOf="parent"
@@ -263,8 +271,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_cpf_constraint"
-        android:layout_width="171dp"
-        android:layout_height="48dp"
+        android:layout_width="173dp"
+        android:layout_height="47dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         app:boxCornerRadiusBottomEnd="10dp"
@@ -330,7 +338,7 @@
         android:id="@+id/txt_numeroCasa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="8dp"
         android:text="@string/numero"
         app:layout_constraintStart_toEndOf="@+id/edit_rua_constraint"
@@ -338,14 +346,16 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_numero_constraint"
-        android:layout_width="101dp"
+        android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edit_rua_constraint"
         app:layout_constraintTop_toBottomOf="@+id/txt_numeroCasa">
 
@@ -374,7 +384,6 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:ems="10"
-        android:inputType="text"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
@@ -386,14 +395,15 @@
             android:id="@+id/edit_cidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:inputType="textPersonName"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/txt_bairro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="8dp"
         android:text="@string/bairro"
         app:layout_constraintStart_toEndOf="@+id/edit_cidade_constraint"
@@ -404,12 +414,13 @@
         android:layout_width="187dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="text"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edit_cidade_constraint"
         app:layout_constraintTop_toBottomOf="@+id/txt_bairro">
 
@@ -417,6 +428,7 @@
             android:id="@+id/edit_bairro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPersonName"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -434,7 +446,7 @@
         android:id="@+id/txt_cep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="8dp"
         android:text="@string/cep"
         app:layout_constraintStart_toEndOf="@+id/edit_uf_constraint"
@@ -446,7 +458,6 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:ems="10"
-        android:inputType="text"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
@@ -458,7 +469,8 @@
             android:id="@+id/edit_uf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:inputType="textPersonName"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -466,11 +478,13 @@
         android:layout_width="187dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edit_uf_constraint"
         app:layout_constraintTop_toBottomOf="@+id/txt_cep">
 
@@ -479,7 +493,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:padding="10dp"/>
+            android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
