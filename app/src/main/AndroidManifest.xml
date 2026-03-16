@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Clinica_Univirtus">
         <activity
+            android:name=".AgendamentosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
