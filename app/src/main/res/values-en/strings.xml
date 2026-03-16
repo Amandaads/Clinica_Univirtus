@@ -28,7 +28,7 @@
     <string name="agendamentos">Appointments</string>
     <string name="data_nascimento">Birth Date</string>
     <string name="cadastro_login">Sign Up</string>
-    <string name="hint_senha">eg. 12345</string>
+    <string name="hint_senha">eg. 123456</string>
     <string name="faca_login">Sign In</string>
     <string name="logo_transparente">Blind logo background</string>
     <string name="logo_icon">Logo icon</string>

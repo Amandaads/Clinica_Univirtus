@@ -176,6 +176,11 @@ class CadastroActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+        // BOTAO PARA VOLTAR O LOGIN
+        binding.txtFacaLogin.setOnClickListener {
+            finish()
+        }
+
         // CADASTRAR
         binding.btnCadastro.setOnClickListener {
             val nome = binding.editNome.text.toString()
