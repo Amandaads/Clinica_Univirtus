@@ -2,7 +2,6 @@ package com.example.clinica_univirtus
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -62,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                         binding.editSenhaLogin.text?.clear()
                     }
                     Toast.makeText(this, "Login realizado com sucesso", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, HomeActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("uid", auth.currentUser?.uid)
                     startActivity(intent)
                 }

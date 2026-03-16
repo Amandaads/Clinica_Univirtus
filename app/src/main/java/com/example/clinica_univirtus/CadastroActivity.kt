@@ -100,7 +100,7 @@ class CadastroActivity : AppCompatActivity() {
 
     private fun salvarPerfil(uid: String, perfil: Perfil) {
 
-        var dbREF = database.getReference("perfis")
+        var dbREF = database.getReference("pacientes")
         dbREF.child(uid).setValue(perfil).addOnSuccessListener {
             Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
         }
