@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.clinica_univirtus.databinding.FragmentHomeBinding
+import com.example.clinica_univirtus.databinding.FragmentInicioBinding
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -15,12 +15,12 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
+ * Use the [InicioFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class InicioFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentInicioBinding? = null
     private val binding get() = _binding!!
 
     private var param1: String? = null
@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentInicioBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -59,7 +59,6 @@ class HomeFragment : Fragment() {
 
                 binding.txtNomePaciente.text = "$nome $sobrenome"
                 binding.txtPaciente.text = "Paciente"
-
 
             }
             .addOnFailureListener {
@@ -84,11 +83,11 @@ class HomeFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
+         * @return A new instance of fragment InicioFragment.
          */
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
+            InicioFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

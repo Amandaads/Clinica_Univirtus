@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/white"
+    android:theme="@style/Theme.Clinica_Univirtus"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -15,18 +16,25 @@
         app:layout_constraintBottom_toTopOf="@+id/menu_navegacao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topo">
+        app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/menu_navegacao"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_principal"
+        app:itemIconTint="@color/menu_color"
+        app:itemTextColor="@color/menu_color"
+        android:background="@color/white"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_principal"
+        app:paddingBottomSystemWindowInsets="false"
+        android:fitsSystemWindows="false"
+        app:itemActiveIndicatorStyle="@style/EstiloIndicadorMenu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

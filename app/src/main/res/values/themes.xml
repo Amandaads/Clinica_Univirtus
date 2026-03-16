@@ -13,4 +13,8 @@
         <item name="android:windowLightStatusBar">true</item>
 
     </style>
+
+    <style name="EstiloIndicadorMenu" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#D6ECFF</item> <!-- Coloque a cor desejada aqui -->
+    </style>
 </resources>

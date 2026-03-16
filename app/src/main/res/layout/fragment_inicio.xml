@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.HomeFragment">
+    android:theme="@style/Theme.Clinica_Univirtus"
+    tools:context=".fragments.InicioFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/topo"
@@ -48,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:textColor="@color/gray"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/logo_app_pequeno"
