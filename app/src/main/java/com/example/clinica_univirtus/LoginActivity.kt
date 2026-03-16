@@ -2,7 +2,7 @@ package com.example.clinica_univirtus
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.clinica_univirtus.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import androidx.core.content.edit
 
 class LoginActivity : AppCompatActivity() {
 
@@ -29,42 +30,41 @@ class LoginActivity : AppCompatActivity() {
         val botaoEntrar = binding.btnEntrar
         val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
-        val sair = intent.getBooleanExtra("sair", false)
-
         // Shared Preferences para persistir email/senha (fins didáticos)
         val sharedPreferences = this.getSharedPreferences("loginPrefs", MODE_PRIVATE)
         val emailPrefs = sharedPreferences.getString("email", "")
         val senhaPrefs = sharedPreferences.getString("senha", "")
 
-        if (!emailPrefs.isNullOrEmpty() && !senhaPrefs.isNullOrEmpty() && !sair) {
+        if (!emailPrefs.isNullOrEmpty() && !senhaPrefs.isNullOrEmpty()) {
             binding.editEmail.setText(emailPrefs)
             binding.editSenhaLogin.setText(senhaPrefs)
             binding.checkBoxManterConectado.isChecked = true
         }
 
         botaoEntrar.setOnClickListener {
-            var email = binding.editEmail.text.toString()
-            var senha = binding.editSenhaLogin.text.toString()
+            val email = binding.editEmail.text.toString()
+            val senha = binding.editSenhaLogin.text.toString()
 
             auth.signInWithEmailAndPassword(email, senha)
                 .addOnSuccessListener {
                     if (binding.checkBoxManterConectado.isChecked) {
-                        val editor = sharedPreferences.edit()
-                        editor.putString("email", email)
-                        editor.putString("senha", senha)
-                        editor.apply()
+                        sharedPreferences.edit {
+                            putString("email", email)
+                            putString("senha", senha)
+                        }
                     } else {
-                        val editor = sharedPreferences.edit()
-                        editor.remove("email")
-                        editor.remove("senha")
-                        editor.apply()
-                        binding.editEmail.text?.clear()
-                        binding.editSenhaLogin.text?.clear()
+                        sharedPreferences.edit {
+                            remove("email")
+                            remove("senha")
+                        }
                     }
                     Toast.makeText(this, "Login realizado com sucesso", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, HomeActivity::class.java)
                     intent.putExtra("uid", auth.currentUser?.uid)
                     startActivity(intent)
+                    binding.editEmail.text?.clear()
+                    binding.editSenhaLogin.text?.clear()
+                    binding.checkBoxManterConectado.isChecked = false
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Erro ao fazer login", Toast.LENGTH_SHORT).show()
@@ -80,6 +80,21 @@ class LoginActivity : AppCompatActivity() {
         val botaoEsqueciSenha = binding.txtEsqueciSenha
         botaoEsqueciSenha.setOnClickListener {
             Toast.makeText(this, "Função ainda não implementada", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("DEBUG", "Login Resume")
+
+        val sharedPreferences = this.getSharedPreferences("loginPrefs", MODE_PRIVATE)
+        val emailPrefs = sharedPreferences.getString("email", "")
+        val senhaPrefs = sharedPreferences.getString("senha", "")
+
+        if (!emailPrefs.isNullOrEmpty() && !senhaPrefs.isNullOrEmpty()) {
+            binding.editEmail.setText(emailPrefs)
+            binding.editSenhaLogin.setText(senhaPrefs)
+            binding.checkBoxManterConectado.isChecked = true
         }
     }
 }

@@ -9,13 +9,13 @@
     <string name="senha">Senha</string>
     <string name="confirme_senha">Confirme a senha</string>
     <string name="rua">Rua</string>
-    <string name="numero">Numero</string>
+    <string name="numero">Número</string>
     <string name="cidade">Cidade</string>
     <string name="bairro">Bairro</string>
     <string name="uf">UF</string>
     <string name="cep">CEP</string>
-    <string name="botaoCadastro">Cadastro</string>
-    <string name="ja_possui_conta">Já tem uma conta? Faça login</string>
+    <string name="botaoCadastro">Cadastrar</string>
+    <string name="ja_possui_conta">Já tem uma conta?</string>
     <string name="conectado">Manter conectado</string>
     <string name="entrar">Entrar</string>
     <string name="nao_tem_conta">Não tem uma conta?</string>
@@ -27,4 +27,8 @@
     <string name="agendamentos">Agendamentos</string>
     <string name="data_nascimento">Data de Nascimento</string>
     <string name="cadastro_login">Cadastre-se</string>
+    <string name="hint_senha">12345</string>
+    <string name="faca_login">Fazer Login</string>
+    <string name="logo_transparente">Logo transparente no background</string>
+    <string name="logo_icon">Ícone de logo</string>
 </resources>
