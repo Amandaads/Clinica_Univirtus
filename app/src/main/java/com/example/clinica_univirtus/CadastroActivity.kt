@@ -141,6 +141,41 @@ class CadastroActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+        // MASCARA PARA CPF
+        binding.editCpf.addTextChangedListener(object : TextWatcher {
+            private var isUpdating = false
+            private val mask = "###.###.###-##"
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (isUpdating) {
+                    isUpdating = false
+                    return
+                }
+                var str = s.toString().replace("[^\\d]".toRegex(), "")
+                var formatted = ""
+                var i = 0
+                for (m in mask.toCharArray()) {
+
+                    if (m != '#' && str.length > i) {
+                        formatted += m
+                        continue
+                    }
+
+                    try {
+                        formatted += str[i]
+                    } catch (e: Exception) {
+                        break
+                    }
+
+                    i++
+                }
+                isUpdating = true
+                binding.editCpf.setText(formatted)
+                binding.editCpf.setSelection(formatted.length)
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
         // CADASTRAR
         binding.btnCadastro.setOnClickListener {
             val nome = binding.editNome.text.toString()
