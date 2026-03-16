@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Contato"
+        android:id="@+id/item_contato"
+        android:icon="@drawable/icone_menu_contato" />
+    <item
+        android:title="Agendar"
+        android:id="@+id/item_agendar"
+        android:icon="@drawable/icone_menu_agendar" />
+    <item
+        android:title="Agendamentos"
+        android:id="@+id/item_agendamentos"
+        android:icon="@drawable/icone_menu_agendamentos" />
+
+</menu>
