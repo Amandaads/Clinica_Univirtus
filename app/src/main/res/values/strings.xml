@@ -27,7 +27,7 @@
     <string name="agendamentos">Agendamentos</string>
     <string name="data_nascimento">Data de Nascimento</string>
     <string name="cadastro_login">Cadastre-se</string>
-    <string name="hint_senha">12345</string>
+    <string name="hint_senha">ex. 12345</string>
     <string name="faca_login">Fazer Login</string>
     <string name="logo_transparente">Logo transparente no background</string>
     <string name="logo_icon">Ícone de logo</string>
