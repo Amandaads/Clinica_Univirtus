@@ -368,19 +368,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/txt_cidade"
+        android:id="@+id/txt_bairro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:autofillHints="city"
         android:labelFor="@+id/edit_cidade"
-        android:text="@string/cidade"
+        android:text="@string/bairro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_rua_constraint" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_cidade_constraint"
+        android:id="@+id/edit_bairro_constraint"
         android:layout_width="180dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -390,10 +390,10 @@
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cidade">
+        app:layout_constraintTop_toBottomOf="@+id/txt_bairro">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_cidade"
+            android:id="@+id/edit_bairro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -401,17 +401,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/txt_bairro"
+        android:id="@+id/txt_cidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="8dp"
-        android:text="@string/bairro"
-        app:layout_constraintStart_toEndOf="@+id/edit_cidade_constraint"
+        android:text="@string/cidade"
+        app:layout_constraintStart_toEndOf="@+id/edit_bairro_constraint"
         app:layout_constraintTop_toBottomOf="@+id/edit_numero_constraint" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_bairro_constraint"
+        android:id="@+id/edit_cidade_constraint"
         android:layout_width="187dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -422,11 +422,11 @@
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_cidade_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/txt_bairro">
+        app:layout_constraintStart_toEndOf="@+id/edit_bairro_constraint"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cidade">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_bairro"
+            android:id="@+id/edit_cidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
