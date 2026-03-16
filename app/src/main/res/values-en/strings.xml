@@ -16,14 +16,20 @@
     <string name="uf">State</string>
     <string name="cep">Zip Code</string>
     <string name="botaoCadastro">Register</string>
-    <string name="ja_possui_conta">Do you already have an account? Log in!</string>
+    <string name="ja_possui_conta">Do you already have an account?</string>
     <string name="conectado">Stay connected</string>
     <string name="entrar">Enter</string>
-    <string name="nao_tem_conta">Don\'t have an account? Sign up.</string>
+    <string name="nao_tem_conta">Don\'t have an account?</string>
     <string name="esqueceu_senha">Forgot your password?</string>
     <string name="paciente">Patient</string>
     <string name="sair">Logout</string>
     <string name="contato">Contact</string>
     <string name="agendar">Schedule</string>
     <string name="agendamentos">Appointments</string>
+    <string name="data_nascimento">Birth Date</string>
+    <string name="cadastro_login">Sign Up</string>
+    <string name="hint_senha">eg. 123456</string>
+    <string name="faca_login">Sign In</string>
+    <string name="logo_transparente">Blind logo background</string>
+    <string name="logo_icon">Logo icon</string>
 </resources>
