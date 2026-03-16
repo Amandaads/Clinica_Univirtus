@@ -50,9 +50,11 @@ class HomeActivity : AppCompatActivity() {
             }
 
         binding.buttonSair.setOnClickListener {
-            val i = Intent(this, LoginActivity::class.java)
-            i.putExtra("sair", true)
-            startActivity(i)
+            val sharedPreferences = this.getSharedPreferences("loginPrefs", MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.remove("email")
+            editor.remove("senha")
+            editor.apply()
             finish()
         }
 
