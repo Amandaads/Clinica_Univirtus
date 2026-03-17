@@ -27,9 +27,6 @@
             android:name=".AgendamentosActivity"
             android:exported="false" />
         <activity
-            android:name=".ContactActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity

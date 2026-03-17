@@ -35,10 +35,10 @@
     <string name="entre_contato">Contact us</string>
     <string name="diaAtendimento">Monday to Friday, 8:00am to 6:00pm</string>
     <string name="num_telefone">(11) 99000-0000</string>
-    <string name="email_contato">contato@contatounivirtos.com.br</string>
+    <string name="email_contato">contact@univirtus.com.br</string>
     <string name="email_respondemos">We will respond within 24 hours.</string>
-    <string name="rua_contato">Rua da esperança, 123</string>
-    <string name="bairro_estado_contato">Centro, Algum lugar - PR</string>
+    <string name="rua_contato">Rua da Esperança, 123</string>
+    <string name="bairro_estado_contato">Centro, Coritiba - PR</string>
     <string name="cep_contato">CEP: 01234-567</string>
     <string name="horarios_atendimento">Opening hours</string>
     <string name="seg_sexta">Monday to Friday</string>
@@ -52,4 +52,7 @@
     <string name="horario">Time: 03 p.m.</string>
     <string name="especialidade">Specialty</string>
     <string name="medico">Doctor</string>
+    <string name="hora_atendimento_sabado">8 a.m. - 12 a.m.</string>
+    <string name="hora_atendimento_domingo">closed</string>
+    <string name="desenvolvido_por">Developed by:</string>
 </resources>
