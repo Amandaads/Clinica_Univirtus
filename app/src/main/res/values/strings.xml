@@ -31,4 +31,27 @@
     <string name="faca_login">Fazer Login</string>
     <string name="logo_transparente">Logo transparente no background</string>
     <string name="logo_icon">Ícone de logo</string>
+    <string name="entre_contato">Entre em contato conosco</string>
+    <string name="diaAtendimento">Segunda à Sexta, 08h00 às 18h00</string>
+    <string name="num_telefone">(11) 99000-0000</string>
+    <string name="email_contato">contato@univirtus.com.br</string>
+    <string name="email_respondemos">Responderemos em até 24 horas</string>
+    <string name="rua_contato">Rua da Esperança, 123</string>
+    <string name="bairro_estado_contato">Centro, Coritiba - PR</string>
+    <string name="cep_contato">CEP: 01234-567</string>
+    <string name="horarios_atendimento">Horários de atendimento</string>
+    <string name="seg_sexta">Segunda à sexta</string>
+    <string name="hora_atendimento">08h às 18h</string>
+    <string name="sabado_atendimento">Sábado</string>
+    <string name="domingo_atendimento">Domingo</string>
+    <string name="titulo_agendamentos">Meus Agendamentos</string>
+    <string name="remarcar">Remarcar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="data">Data: 24/08</string>
+    <string name="horario">Horário: 15:00</string>
+    <string name="especialidade">Especialidade</string>
+    <string name="medico">Médico</string>
+    <string name="hora_atendimento_sabado">08h às 12h</string>
+    <string name="hora_atendimento_domingo">fechado</string>
+    <string name="desenvolvido_por">Desenvolvido por:</string>
 </resources>
