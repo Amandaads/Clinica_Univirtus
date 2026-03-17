@@ -24,13 +24,14 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".AgendamentosActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".CadastroActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
