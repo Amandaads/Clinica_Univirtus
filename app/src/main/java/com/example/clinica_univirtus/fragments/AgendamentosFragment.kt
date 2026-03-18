@@ -57,7 +57,7 @@ class AgendamentosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recycler = view.findViewById<RecyclerView>(R.id.recyclerAgendamentos)
+        val recycler = binding.recyclerAgendamentos
         recycler.layoutManager = LinearLayoutManager(requireContext())
         val lista = mutableListOf<Agendamento>()
         val adapter = AgendamentoListAdapter(
@@ -82,10 +82,7 @@ class AgendamentosFragment : Fragment() {
                     }
                     .setNegativeButton("Voltar", null)
                     .show()
-
-//                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
-//                    .setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
-                dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE)
                     .setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
             }
         )
@@ -93,7 +90,6 @@ class AgendamentosFragment : Fragment() {
 
         val uid = requireActivity().intent.getStringExtra("uid")
         val ref = FirebaseDatabase.getInstance().getReference("pacientes/$uid/agendamentos")
-
         ref.addValueEventListener(object : ValueEventListener {
             @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
