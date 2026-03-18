@@ -57,13 +57,14 @@ class InicioFragment : Fragment() {
 
         ref.child(uid).get()
             .addOnSuccessListener { snapshot ->
+                // O uso do _binding?.let evita o NullPointerException
+                _binding?.let { binding ->
+                    val nome = snapshot.child("nome").value.toString()
+                    val sobrenome = snapshot.child("sobrenome").value.toString()
 
-                val nome = snapshot.child("nome").value
-                val sobrenome = snapshot.child("sobrenome").value
-
-                binding.txtNomePaciente.text = "$nome $sobrenome"
-                binding.txtPaciente.text = "Paciente"
-
+                    binding.txtNomePaciente.text = "$nome $sobrenome"
+                    binding.txtPaciente.text = "Paciente"
+                }
             }
             .addOnFailureListener {
                 println("Erro ao buscar usuário")
@@ -73,7 +74,8 @@ class InicioFragment : Fragment() {
 
             FirebaseAuth.getInstance().signOut()
             // Apagar o SharedPreferences
-            val sharedPreferences = requireActivity().getSharedPreferences("loginPrefs", MODE_PRIVATE)
+            val sharedPreferences =
+                requireActivity().getSharedPreferences("loginPrefs", MODE_PRIVATE)
             sharedPreferences.edit {
                 remove("email")
                 remove("senha")
