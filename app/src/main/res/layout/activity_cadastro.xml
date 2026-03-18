@@ -92,7 +92,9 @@
             android:id="@+id/edit_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:inputType="textPersonName"
+            android:nextFocusForward="@+id/edit_sobrenome"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,7 +130,9 @@
             android:id="@+id/edit_sobrenome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:inputType="textPersonName"
+            android:nextFocusForward="@+id/edit_data_nascimento"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,6 +165,8 @@
             android:id="@+id/edit_data_nascimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/editTextPhone"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -195,6 +201,8 @@
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/edit_email"
             android:padding="10dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -229,6 +237,8 @@
             android:id="@+id/edit_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/edit_cpf"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -261,7 +271,9 @@
             android:id="@+id/edit_cpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:inputType="number"
+            android:nextFocusForward="@+id/edit_senha"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -298,7 +310,9 @@
             android:id="@+id/edit_senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:inputType="textPassword"
+            android:nextFocusForward="@+id/edit_rua"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -332,6 +346,8 @@
             android:id="@+id/edit_rua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/edit_numero"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -364,6 +380,8 @@
             android:id="@+id/edit_numero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/edit_bairro"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -396,7 +414,9 @@
             android:id="@+id/edit_bairro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:inputType="textPersonName"
+            android:nextFocusForward="@+id/edit_cidade"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -429,7 +449,9 @@
             android:id="@+id/edit_cidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:inputType="textPersonName"
+            android:nextFocusForward="@+id/edit_uf"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -460,7 +482,9 @@
             android:id="@+id/edit_uf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:inputType="textPersonName"
+            android:nextFocusForward="@+id/edit_Cep"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -493,7 +517,9 @@
             android:id="@+id/edit_Cep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:inputType="number"
+            android:nextFocusForward="@+id/btn_cadastro"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -502,12 +528,15 @@
         android:layout_width="372dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/green"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@+id/txt_faca_login"
         android:text="@string/botaoCadastro"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_uf_constraint" />
 
@@ -530,6 +559,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:imeOptions="actionDone"
         android:text="@string/faca_login"
         android:textColor="@color/blue_link"
         app:layout_constraintStart_toEndOf="@+id/txt_ja_possui_conta"
