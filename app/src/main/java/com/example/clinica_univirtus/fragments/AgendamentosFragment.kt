@@ -1,11 +1,26 @@
 package com.example.clinica_univirtus.fragments
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.clinica_univirtus.R
+import com.example.clinica_univirtus.adapters.AgendamentoListAdapter
+import com.example.clinica_univirtus.databinding.FragmentAgendamentosBinding
+import com.example.clinica_univirtus.models.Agendamento
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -17,6 +32,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class AgendamentosFragment : Fragment() {
+    private var _binding: FragmentAgendamentosBinding? = null
+    private val binding get() = _binding!!
     private var param1: String? = null
     private var param2: String? = null
 
@@ -31,9 +48,78 @@ class AgendamentosFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agendamentos, container, false)
+        _binding = FragmentAgendamentosBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val recycler = view.findViewById<RecyclerView>(R.id.recyclerAgendamentos)
+        recycler.layoutManager = LinearLayoutManager(requireContext())
+        val lista = mutableListOf<Agendamento>()
+        val adapter = AgendamentoListAdapter(
+            lista,
+            onCancelar = { agendamento ->
+                val dialog = AlertDialog.Builder(requireContext())
+                    .setTitle("Cancelar agendamento")
+                    .setMessage("Tem certeza que deseja cancelar este agendamento?")
+                    .setPositiveButton("SIM, CANCELAR") { _, _ ->
+
+                        val uid = requireActivity().intent.getStringExtra("uid")
+                        val ref = FirebaseDatabase.getInstance()
+                            .getReference("pacientes/$uid/agendamentos/${agendamento.uid}")
+
+                        ref.removeValue()
+
+                        Toast.makeText(
+                            requireContext(),
+                            "Cancelamento realizado com sucesso!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    .setNegativeButton("Voltar", null)
+                    .show()
+
+//                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+//                    .setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                    .setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+            }
+        )
+        recycler.adapter = adapter
+
+        val uid = requireActivity().intent.getStringExtra("uid")
+        val ref = FirebaseDatabase.getInstance().getReference("pacientes/$uid/agendamentos")
+
+        ref.addValueEventListener(object : ValueEventListener {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onDataChange(snapshot: DataSnapshot) {
+                lista.clear()
+                for (agendamentoSnap in snapshot.children) {
+                    // pular agendamento concluido
+                    if (agendamentoSnap.child("concluido").value == true) continue
+                    val agendamento = agendamentoSnap.getValue(Agendamento::class.java)
+                    agendamento?.let {
+                        it.uid = agendamentoSnap.key.toString()
+                        lista.add(it)
+                    }
+                }
+                // Ordena a data para a mais próxima
+                lista.sortWith(compareBy({ it.data }, { it.hora }))
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {

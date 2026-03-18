@@ -3,6 +3,8 @@ package com.example.clinica_univirtus
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -42,6 +44,9 @@ class LoginActivity : AppCompatActivity() {
         }
 
         botaoEntrar.setOnClickListener {
+
+            mostrarLoadingLogin()
+
             val email = binding.editEmail.text.toString()
             val senha = binding.editSenhaLogin.text.toString()
 
@@ -67,6 +72,7 @@ class LoginActivity : AppCompatActivity() {
                     binding.checkBoxManterConectado.isChecked = false
                 }
                 .addOnFailureListener {
+                    esconderLoadingLogin()
                     Toast.makeText(this, "Erro ao fazer login", Toast.LENGTH_SHORT).show()
                 }
         }
@@ -85,7 +91,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.d("DEBUG", "Login Resume")
+        Log.d("DEBUG", "Login Resumed")
+
+        esconderLoadingLogin()
 
         val sharedPreferences = this.getSharedPreferences("loginPrefs", MODE_PRIVATE)
         val emailPrefs = sharedPreferences.getString("email", "")
@@ -96,5 +104,17 @@ class LoginActivity : AppCompatActivity() {
             binding.editSenhaLogin.setText(senhaPrefs)
             binding.checkBoxManterConectado.isChecked = true
         }
+    }
+
+    fun mostrarLoadingLogin() {
+        binding.progressLogin.visibility = View.VISIBLE
+        binding.btnEntrar.text = ""
+        binding.btnEntrar.isEnabled = false
+    }
+
+    fun esconderLoadingLogin() {
+        binding.progressLogin.visibility = View.GONE
+        binding.btnEntrar.text = "Entrar"
+        binding.btnEntrar.isEnabled = true
     }
 }
