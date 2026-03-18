@@ -55,7 +55,7 @@ class InicioFragment : Fragment() {
         val uid = user?.uid ?: return
 
 
-        ref.child(uid).get()
+        ref.child(uid).child("infos").get()
             .addOnSuccessListener { snapshot ->
                 // O uso do _binding?.let evita o NullPointerException
                 _binding?.let { binding ->
