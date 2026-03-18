@@ -1,6 +1,6 @@
 package com.example.clinica_univirtus.models
 
-data class Perfil(
+data class Paciente(
     val nome: String = "",
     val sobrenome: String = "",
     val dataNascimento: String = "",
