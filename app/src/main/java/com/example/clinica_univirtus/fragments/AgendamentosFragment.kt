@@ -16,6 +16,7 @@ import com.example.clinica_univirtus.adapters.AgendamentoListAdapter
 import com.example.clinica_univirtus.databinding.FragmentAgendamentosBinding
 import com.example.clinica_univirtus.models.Agendamento
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -43,6 +44,14 @@ class AgendamentosFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        // verifica se usuário está logado
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        if (uid == null) {
+            Toast.makeText(requireContext(), "Usuário não logado", Toast.LENGTH_SHORT).show()
+            requireActivity().finish()
+        }
+
     }
 
     override fun onCreateView(
