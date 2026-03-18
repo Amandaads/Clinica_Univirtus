@@ -273,13 +273,15 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_remarcar"
+            android:id="@+id/btn_marcar_agendamento"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_marginBottom="16dp"
             android:layout_weight="1"
             android:backgroundTint="#10B15A"
             android:text="Confirmar"
+            android:enabled="false"
+            android:visibility="gone"
             android:textColor="@android:color/white"
             app:cornerRadius="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
