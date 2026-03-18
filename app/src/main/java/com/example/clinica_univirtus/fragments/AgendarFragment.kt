@@ -232,7 +232,7 @@ class AgendarFragment : Fragment() {
         val listaHorarios = mutableListOf<String>()
         contadorHorarios = 0
 
-        refAgenda.child(idMedico).child(data).addValueEventListener(object : ValueEventListener {
+        refAgenda.child(idMedico).child(data).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 listaHorarios.clear()
 
@@ -330,10 +330,13 @@ class AgendarFragment : Fragment() {
         val user = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
         val uidPaciente = user?.uid ?: return
 
+
         val agendamento = AgendamentoDto(
             data = dataSelecionada,
             hora = horarioSelecionado,
+            idEspecialidade = idEspecialidadeSelecionada,
             especialidade = especialidadeSelecionada,
+            idMedico = idMedicoSelecionado,
             medico = medicoSelecionado,
             concluido = false
         )
@@ -351,8 +354,6 @@ class AgendarFragment : Fragment() {
 
                 atualizarAgenda()
 
-                val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.menu_navegacao)
-                bottomNav.selectedItemId = R.id.item_agendamentos
             }
             .addOnFailureListener {
                 Toast.makeText(requireContext(), "Erro ao agendar: ${it.message}", Toast.LENGTH_SHORT).show()
@@ -367,16 +368,20 @@ class AgendarFragment : Fragment() {
 
         refData.child(horarioSelecionado)
             .setValue(false)
-
-        if(contadorHorarios == 1){
-            refData.child("possuiHorarios")
-                .setValue(false)
-            if(contadorDatas == 1){
-                ref.child(idEspecialidadeSelecionada).child(idMedicoSelecionado).child("possuiAgenda")
-                    .setValue(false)
+            .addOnSuccessListener {
+                if(contadorHorarios == 1){
+                    refData.child("possuiHorarios")
+                        .setValue(false)
+                        .addOnSuccessListener {
+                            if(contadorDatas == 1){
+                                ref.child(idEspecialidadeSelecionada).child(idMedicoSelecionado).child("possuiAgenda")
+                                    .setValue(false)
+                            }
+                        }
+                }
+                val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.menu_navegacao)
+                bottomNav.selectedItemId = R.id.item_agendamentos
             }
-        }
-
     }
 
     override fun onDestroyView() {
