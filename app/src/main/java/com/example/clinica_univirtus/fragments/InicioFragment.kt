@@ -1,10 +1,12 @@
 package com.example.clinica_univirtus.fragments
 
+import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.edit
 import com.example.clinica_univirtus.databinding.FragmentInicioBinding
 import com.google.firebase.database.FirebaseDatabase
 
@@ -66,6 +68,12 @@ class InicioFragment : Fragment() {
             }
 
         binding.buttonSair.setOnClickListener {
+            // Apagar o SharedPreferences
+            val sharedPreferences = requireActivity().getSharedPreferences("loginPrefs", MODE_PRIVATE)
+            sharedPreferences.edit {
+                remove("email")
+                remove("senha")
+            }
             requireActivity().finish()
         }
 
