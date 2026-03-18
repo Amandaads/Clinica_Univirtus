@@ -63,7 +63,6 @@ class LoginActivity : AppCompatActivity() {
                             remove("senha")
                         }
                     }
-                    Toast.makeText(this, "Login realizado com sucesso", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("uid", auth.currentUser?.uid)
                     startActivity(intent)
