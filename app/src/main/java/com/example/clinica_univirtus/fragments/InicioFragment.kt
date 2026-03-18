@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.edit
 import com.example.clinica_univirtus.databinding.FragmentInicioBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -50,26 +51,31 @@ class InicioFragment : Fragment() {
 
         val database = FirebaseDatabase.getInstance()
         val ref = database.getReference("pacientes")
-        val uid = requireActivity().intent.getStringExtra("uid")
+        val user = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
+        val uid = user?.uid ?: return
 
 
-        ref.child(uid!!).get()
+        ref.child(uid).child("infos").get()
             .addOnSuccessListener { snapshot ->
+                // O uso do _binding?.let evita o NullPointerException
+                _binding?.let { binding ->
+                    val nome = snapshot.child("nome").value.toString()
+                    val sobrenome = snapshot.child("sobrenome").value.toString()
 
-                val nome = snapshot.child("nome").value
-                val sobrenome = snapshot.child("sobrenome").value
-
-                binding.txtNomePaciente.text = "$nome $sobrenome"
-                binding.txtPaciente.text = "Paciente"
-
+                    binding.txtNomePaciente.text = "$nome $sobrenome"
+                    binding.txtPaciente.text = "Paciente"
+                }
             }
             .addOnFailureListener {
                 println("Erro ao buscar usuário")
             }
 
         binding.buttonSair.setOnClickListener {
+
+            FirebaseAuth.getInstance().signOut()
             // Apagar o SharedPreferences
-            val sharedPreferences = requireActivity().getSharedPreferences("loginPrefs", MODE_PRIVATE)
+            val sharedPreferences =
+                requireActivity().getSharedPreferences("loginPrefs", MODE_PRIVATE)
             sharedPreferences.edit {
                 remove("email")
                 remove("senha")

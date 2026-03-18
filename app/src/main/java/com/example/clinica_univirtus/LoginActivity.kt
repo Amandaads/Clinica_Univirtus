@@ -92,6 +92,12 @@ class LoginActivity : AppCompatActivity() {
         super.onResume()
         Log.d("DEBUG", "Login Resumed")
 
+        // Verificar se o usuário está logado e deslogar
+        val auth = FirebaseAuth.getInstance()
+        if (auth.currentUser != null) {
+            auth.signOut()
+        }
+
         esconderLoadingLogin()
 
         val sharedPreferences = this.getSharedPreferences("loginPrefs", MODE_PRIVATE)
