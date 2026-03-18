@@ -98,9 +98,9 @@ class AgendamentosFragment : Fragment() {
                     // pular agendamento concluido
                     if (agendamentoSnap.child("concluido").value == true) continue
                     val agendamento = agendamentoSnap.getValue(Agendamento::class.java)
-                    agendamento?.let {
-                        it.uid = agendamentoSnap.key.toString()
-                        lista.add(it)
+                    agendamento?.let { agendamento ->
+                        agendamento.uid = agendamentoSnap.key.toString()
+                        lista.add(agendamento)
                     }
                 }
                 // Ordena a data para a mais próxima
