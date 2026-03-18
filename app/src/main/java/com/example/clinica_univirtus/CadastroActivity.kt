@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -264,6 +265,11 @@ class CadastroActivity : AppCompatActivity() {
             Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("DEBUG", "Cadastro Destroyed")
     }
 
 }
