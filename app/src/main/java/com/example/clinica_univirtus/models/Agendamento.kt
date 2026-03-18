@@ -4,7 +4,9 @@ data class Agendamento(
     var uid: String = "",
     val data: String = "",
     val hora: String = "",
+    val idEspecialidade: String = "",
     val especialidade: String = "",
+    val idMedico: String = "",
     val medico: String = "",
     val concluido: Boolean = false
 )
