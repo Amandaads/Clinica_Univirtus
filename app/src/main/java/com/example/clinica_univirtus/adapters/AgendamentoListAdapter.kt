@@ -36,7 +36,7 @@ class AgendamentoListAdapter(
         return AgendamentoViewHolder(view)
     }
 
-    override fun getItemCount() = lista.size
+    override fun getItemCount()= lista.size
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: AgendamentoViewHolder, position: Int) {
