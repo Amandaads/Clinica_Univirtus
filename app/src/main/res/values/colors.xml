@@ -10,5 +10,8 @@
     <color name="gray">#838383</color>
     <color name="cinza_hint">#9E9E9E</color>
     <color name="redv2">#FF0000</color>
+    <color name="botao_ok_backgroundTint">#10B15A</color>
+    <color name="botao_cancelar_strokeColor">#FF0000</color>
+    <color name="item_agendamento_strokeColor">#D0D5DD</color>
     <color name="cinza_button">#CAD1DE</color>
 </resources>
