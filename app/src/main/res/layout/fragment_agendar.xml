@@ -12,9 +12,10 @@
         android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/view_agendar"
+            android:id="@+id/card_titulo_agendar"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:background="@color/white"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="32dp"
-                    android:text="Agendamento"
+                    android:text="Novo Agendamento"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/logo_app_superior"
@@ -51,135 +52,239 @@
         </androidx.cardview.widget.CardView>
 
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_esp_cardiologista"
-            android:layout_width="165dp"
+        <TextView
+            android:id="@+id/text_titulo_especialidades"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:text="Cardiologia"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_esp_cardiologia"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="@null"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Especialidades"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_agendar"
-            app:strokeColor="@color/cinza_button"
-            app:strokeWidth="2dp" />
+            app:layout_constraintTop_toBottomOf="@+id/card_titulo_agendar" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_esp_clinico"
-            android:layout_width="165dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Clínico Geral"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_esp_clinico"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_agendar"
-            app:strokeColor="@color/cinza_button"
-            app:strokeWidth="2dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_esp_otorrino"
-            android:layout_width="165dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
-            android:text="Otorrino"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_esp_otorrino"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_esp_cardiologista"
-            app:strokeColor="@color/cinza_button"
-            app:strokeWidth="2dp" />
+            app:layout_constraintTop_toBottomOf="@+id/text_titulo_especialidades">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_esp_ortopedista"
-            android:layout_width="165dp"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_esp_cardiologia"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:text="Cardiologia"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_esp_cardiologia"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/cinza_button"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_esp_clinico"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Clínico Geral"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_esp_clinico"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_esp_cardiologia"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/cinza_button"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_esp_ortopedia"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text="Ortopedia"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_esp_ortopedia"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_esp_nutricao"
+                app:layout_constraintTop_toBottomOf="@+id/btn_esp_clinico"
+                app:strokeColor="@color/cinza_button"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_esp_nutricao"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Nutrição"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_esp_nutricao"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_esp_cardiologia"
+                app:strokeColor="@color/cinza_button"
+                app:strokeWidth="2dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/text_agenda_indisponivel"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="32dp"
-            android:text="Ortopedista"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_esp_ortopedia"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="@null"
+            android:layout_marginTop="16dp"
+            android:text="A especialidade escolhida \n não possui agenda"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_esp_clinico"
-            app:strokeColor="@color/cinza_button"
-            app:strokeWidth="2dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_esp_nutricao"
-            android:layout_width="165dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="12dp"
-            android:text="Nutrição"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_esp_nutricao"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="@null"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_esp_otorrino"
-            app:strokeColor="@color/cinza_button"
-            app:strokeWidth="2dp" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_esp_pediatria"
-            android:layout_width="165dp"
+        <TextView
+            android:id="@+id/text_titulo_medicos"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="32dp"
-            android:text="Pediatria"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_esp_pediatria"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_esp_ortopedista"
-            app:strokeColor="@color/cinza_button"
-            app:strokeWidth="2dp" />
+            android:text="Médicos"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-        <Spinner
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_autocomplete_medicos"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Selecione um médico"
+            android:visibility="invisible"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/cinza_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_titulo_medicos">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete_medicos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_titulo_datas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Datas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_autocomplete_medicos" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_autocomplete_datas"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Selecione uma data"
+            android:visibility="invisible"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/cinza_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_titulo_datas">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete_datas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_titulo_horarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Horários"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_autocomplete_datas" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerHorarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_esp_nutricao" />
+            app:layout_constraintTop_toBottomOf="@id/text_titulo_horarios" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_remarcar"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:backgroundTint="#10B15A"
+            android:text="Confirmar"
+            android:textColor="@android:color/white"
+            app:cornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,6 +1,5 @@
 package com.example.clinica_univirtus
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,11 +7,9 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.clinica_univirtus.databinding.ActivityCadastroBinding
-import com.example.clinica_univirtus.models.Perfil
-import com.google.android.material.textfield.TextInputEditText
+import com.example.clinica_univirtus.models.Paciente
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.database
@@ -228,7 +225,7 @@ class CadastroActivity : AppCompatActivity() {
 
                         val uid = result.user!!.uid
 
-                        val perfil = Perfil(
+                        val paciente = Paciente(
                             nome,
                             sobrenome,
                             dataNascimento,
@@ -243,7 +240,7 @@ class CadastroActivity : AppCompatActivity() {
                             cep
                         )
 
-                        salvarPerfil(uid, perfil)
+                        salvarPerfil(uid, paciente)
                         finish()
 
                     }
@@ -257,10 +254,10 @@ class CadastroActivity : AppCompatActivity() {
 
     }
 
-    private fun salvarPerfil(uid: String, perfil: Perfil) {
+    private fun salvarPerfil(uid: String, paciente: Paciente) {
 
         var dbREF = database.getReference("pacientes")
-        dbREF.child(uid).setValue(perfil).addOnSuccessListener {
+        dbREF.child(uid).setValue(paciente).addOnSuccessListener {
             Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
         }
 
