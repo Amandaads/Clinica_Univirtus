@@ -2,6 +2,7 @@ package com.example.clinica_univirtus.fragments
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -114,6 +115,7 @@ class AgendarFragment : Fragment() {
         }
 
         binding.btnMarcarAgendamento.setOnClickListener {
+            binding.btnMarcarAgendamento.isEnabled = false
             confirmarAgendamento()
 
         }
@@ -360,27 +362,42 @@ class AgendarFragment : Fragment() {
             }
     }
 
-    private fun atualizarAgenda(){
-        println("Contador de Datas $contadorDatas")
-        println("Contador de Horários $contadorHorarios")
+    private fun atualizarAgenda() {
 
-        val refData = refAgenda.child(idMedicoSelecionado).child(dataSelecionada)
+        Log.d("Agenda", "Contador de Datas $contadorDatas")
+        Log.d("Agenda", "Contador de Horários $contadorHorarios")
+
+        val refData = refAgenda
+            .child(idMedicoSelecionado)
+            .child(dataSelecionada)
+
+        val refMedico = ref
+            .child(idEspecialidadeSelecionada)
+            .child(idMedicoSelecionado)
 
         refData.child(horarioSelecionado)
             .setValue(false)
             .addOnSuccessListener {
-                if(contadorHorarios == 1){
+
+                if (contadorHorarios == 1) {
                     refData.child("possuiHorarios")
                         .setValue(false)
                         .addOnSuccessListener {
-                            if(contadorDatas == 1){
-                                ref.child(idEspecialidadeSelecionada).child(idMedicoSelecionado).child("possuiAgenda")
+
+                            if (contadorDatas == 1) {
+                                refMedico.child("possuiAgenda")
                                     .setValue(false)
                             }
                         }
                 }
-                val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.menu_navegacao)
+
+                val bottomNav = requireActivity()
+                    .findViewById<BottomNavigationView>(R.id.menu_navegacao)
+
                 bottomNav.selectedItemId = R.id.item_agendamentos
+            }
+            .addOnFailureListener {
+                Log.e("Agenda", "Erro ao atualizar agenda", it)
             }
     }
 
