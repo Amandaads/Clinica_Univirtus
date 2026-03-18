@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Clinica_Univirtus</string>
+    <string name="app_name">Clinica Univirtus</string>
     <string name="cadastro">Cadastro de paciente</string>
     <string name="nome">Nome</string>
     <string name="sobrenome">Sobrenome</string>

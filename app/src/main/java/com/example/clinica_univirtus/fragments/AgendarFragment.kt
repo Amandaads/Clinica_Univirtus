@@ -327,7 +327,8 @@ class AgendarFragment : Fragment() {
             binding.btnMarcarAgendamento.isEnabled = false
             return
         }
-        val uidPaciente: String = requireActivity().intent.getStringExtra("uid").toString()
+        val user = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
+        val uidPaciente = user?.uid ?: return
 
         val agendamento = AgendamentoDto(
             data = dataSelecionada,
@@ -349,12 +350,6 @@ class AgendarFragment : Fragment() {
                 Toast.makeText(requireContext(), "Agendamento realizado com sucesso", Toast.LENGTH_SHORT).show()
 
                 atualizarAgenda()
-                val fragmentAgendamentos = AgendamentosFragment()
-
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.frameLayout, fragmentAgendamentos)
-                    .addToBackStack(null)
-                    .commit()
 
                 val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.menu_navegacao)
                 bottomNav.selectedItemId = R.id.item_agendamentos
