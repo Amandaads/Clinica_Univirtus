@@ -67,7 +67,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:paddingTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,11 +80,12 @@
             android:layout_height="wrap_content"
             android:text="@string/nome"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:labelFor="@+id/edit_nome" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_nome_constraint"
-            android:layout_width="173dp"
+            android:layout_width="176dp"
             android:layout_height="48dp"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusBottomEnd="10dp"
@@ -108,15 +109,15 @@
             android:id="@+id/txt_sobrenome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="151dp"
+            android:layout_marginStart="16dp"
             android:labelFor="@+id/edit_sobrenome"
             android:text="@string/sobrenome"
-            app:layout_constraintStart_toEndOf="@+id/txt_nome"
+            app:layout_constraintStart_toEndOf="@+id/edit_nome_constraint"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_sobrenome_constraint"
-            android:layout_width="189dp"
+            android:layout_width="190dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:ems="10"
@@ -144,12 +145,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/data_nascimento"
+            android:labelFor="@id/edit_data_nascimento"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_nome_constraint" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_data_nascimento_constraint"
-            android:layout_width="173dp"
+            android:layout_width="176dp"
             android:layout_height="48dp"
             android:ems="10"
             android:inputType="text"
@@ -174,15 +176,16 @@
             android:id="@+id/txt_telefone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/telefone"
-            app:layout_constraintStart_toEndOf="@+id/txt_data_nascimento"
+            android:labelFor="@+id/editTextPhone"
+            app:layout_constraintStart_toEndOf="@+id/edit_data_nascimento_constraint"
             app:layout_constraintTop_toBottomOf="@+id/edit_sobrenome_constraint" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editTextPhone_constraint"
-            android:layout_width="189dp"
+            android:layout_width="190dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:inputType="phone"
@@ -210,13 +213,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/email"
+            android:labelFor="@+id/edit_email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_data_nascimento_constraint" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_email_constraint"
-            android:layout_width="match_parent"
-            android:layout_height="47dp"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
             android:ems="10"
             android:inputType="textEmailAddress"
             app:boxCornerRadiusBottomEnd="10dp"
@@ -240,9 +244,9 @@
             android:id="@+id/txt_cpf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/cpf"
+            android:labelFor="@+id/edit_cpf"
             app:layout_constraintEnd_toStartOf="@+id/txt_senha"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -250,9 +254,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_cpf_constraint"
-            android:layout_width="173dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="176dp"
+            android:layout_height="48dp"
             android:ems="10"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
@@ -276,17 +279,18 @@
             android:id="@+id/txt_senha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="204dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/senha"
-            app:layout_constraintStart_toStartOf="parent"
+            android:labelFor="@+id/edit_senha"
+            app:layout_constraintStart_toEndOf="@+id/edit_cpf_constraint"
             app:layout_constraintTop_toBottomOf="@+id/edit_email_constraint" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_senha_constraint"
             android:layout_width="190dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
             android:ems="10"
             android:hint="@string/hint_senha"
             app:boxCornerRadiusBottomEnd="10dp"
@@ -295,8 +299,6 @@
             app:boxCornerRadiusTopStart="10dp"
             app:endIconMode="password_toggle"
             app:hintTextColor="@color/cinza_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/edit_cpf_constraint"
             app:layout_constraintTop_toBottomOf="@+id/txt_senha">
 
@@ -315,9 +317,9 @@
             android:id="@+id/txt_rua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/rua"
+            android:labelFor="@+id/edit_rua"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_cpf_constraint" />
 
@@ -325,10 +327,8 @@
             android:id="@+id/edit_rua_constraint"
             android:layout_width="267dp"
             android:layout_height="48dp"
-            android:layout_marginStart="16dp"
             android:ems="10"
             android:inputType="text"
-
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
@@ -349,9 +349,10 @@
             android:id="@+id/txt_numeroCasa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/numero"
+            android:labelFor="@+id/edit_numero"
             app:layout_constraintStart_toEndOf="@+id/edit_rua_constraint"
             app:layout_constraintTop_toBottomOf="@+id/edit_cpf_constraint" />
 
@@ -360,13 +361,11 @@
             android:layout_width="100dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:ems="10"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_rua_constraint"
             app:layout_constraintTop_toBottomOf="@+id/txt_numeroCasa">
 
@@ -383,10 +382,9 @@
             android:id="@+id/txt_bairro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:autofillHints="city"
-            android:labelFor="@+id/edit_cidade"
+            android:labelFor="@+id/edit_bairro"
             android:text="@string/bairro"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_rua_constraint" />
@@ -395,7 +393,6 @@
             android:id="@+id/edit_bairro_constraint"
             android:layout_width="180dp"
             android:layout_height="48dp"
-            android:layout_marginStart="16dp"
             android:ems="10"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
@@ -418,9 +415,10 @@
             android:id="@+id/txt_cidade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/cidade"
+            android:labelFor="@id/edit_cidade"
             app:layout_constraintStart_toEndOf="@+id/edit_bairro_constraint"
             app:layout_constraintTop_toBottomOf="@+id/edit_numero_constraint" />
 
@@ -429,13 +427,11 @@
             android:layout_width="187dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:ems="10"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_bairro_constraint"
             app:layout_constraintTop_toBottomOf="@+id/txt_cidade">
 
@@ -453,9 +449,9 @@
             android:id="@+id/txt_uf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/uf"
+            android:labelFor="@+id/edit_uf"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_cidade_constraint" />
 
@@ -463,7 +459,6 @@
             android:id="@+id/edit_uf_constraint"
             android:layout_width="180dp"
             android:layout_height="48dp"
-            android:layout_marginStart="16dp"
             android:ems="10"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
@@ -486,9 +481,10 @@
             android:id="@+id/txt_cep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/cep"
+            android:labelFor="@+id/edit_Cep"
             app:layout_constraintStart_toEndOf="@+id/edit_uf_constraint"
             app:layout_constraintTop_toBottomOf="@+id/edit_bairro_constraint" />
 
@@ -497,13 +493,11 @@
             android:layout_width="187dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:ems="10"
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_uf_constraint"
             app:layout_constraintTop_toBottomOf="@+id/txt_cep">
 
@@ -511,9 +505,8 @@
                 android:id="@+id/edit_Cep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:inputType="number"
-                android:nextFocusForward="@+id/btn_cadastro"
                 android:padding="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -521,43 +514,45 @@
             android:id="@+id/btn_cadastro"
             android:layout_width="372dp"
             android:layout_height="48dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="16dp"
             android:backgroundTint="@color/green"
-            android:imeOptions="actionNext"
-            android:nextFocusForward="@+id/txt_faca_login"
+            android:textColor="@color/white"
             android:text="@string/botaoCadastro"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.428"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_uf_constraint" />
 
-        <TextView
-            android:id="@+id/txt_ja_possui_conta"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/ja_possui_conta"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.357"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_cadastro" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_cadastro">
 
-        <TextView
-            android:id="@+id/txt_faca_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:imeOptions="actionDone"
-            android:text="@string/faca_login"
-            android:textColor="@color/blue_link"
-            app:layout_constraintStart_toEndOf="@+id/txt_ja_possui_conta"
-            app:layout_constraintTop_toBottomOf="@+id/btn_cadastro" />
+            <TextView
+                android:id="@+id/txt_ja_possui_conta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ja_possui_conta"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_faca_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/faca_login"
+                android:textColor="#1179C8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_ja_possui_conta"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
