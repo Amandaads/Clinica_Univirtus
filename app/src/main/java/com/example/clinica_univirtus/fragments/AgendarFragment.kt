@@ -40,6 +40,8 @@ class AgendarFragment : Fragment() {
     val database = FirebaseDatabase.getInstance()
     val ref = database.getReference("medicos")
     val refAgenda = database.getReference("agendas")
+    val user = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
+    val uidPaciente: String? = user?.uid
     var contadorDatas : Int = 0
     var contadorHorarios : Int = 0
     val listaMedicos = mutableListOf<Medico>()
@@ -72,26 +74,11 @@ class AgendarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnEspCardiologia.setOnClickListener {
-            buscarMedicos("cardiologia")
-            idEspecialidadeSelecionada = "cardiologia"
-            atualizarBotoes(it as com.google.android.material.button.MaterialButton)
-        }
-        binding.btnEspClinico.setOnClickListener {
-            buscarMedicos("clinico")
-            idEspecialidadeSelecionada = "clinico"
-            atualizarBotoes(it as com.google.android.material.button.MaterialButton)
-        }
-        binding.btnEspOrtopedia.setOnClickListener {
-            buscarMedicos("ortopedia")
-            idEspecialidadeSelecionada = "ortopedia"
-            atualizarBotoes(it as com.google.android.material.button.MaterialButton)
-        }
-        binding.btnEspNutricao.setOnClickListener {
-            buscarMedicos("nutricao")
-            idEspecialidadeSelecionada = "nutricao"
-            atualizarBotoes(it as com.google.android.material.button.MaterialButton)
-        }
+
+        configurarCliqueEspecialidade(binding.btnEspCardiologia, "cardiologia")
+        configurarCliqueEspecialidade(binding.btnEspClinico, "clinico")
+        configurarCliqueEspecialidade(binding.btnEspOrtopedia, "ortopedia")
+        configurarCliqueEspecialidade(binding.btnEspNutricao, "nutricao")
 
         binding.autoCompleteMedicos.setOnItemClickListener { parent, _, position, _ ->
             val medico = listaMedicos[position]
@@ -117,12 +104,54 @@ class AgendarFragment : Fragment() {
         binding.btnMarcarAgendamento.setOnClickListener {
             binding.btnMarcarAgendamento.isEnabled = false
             confirmarAgendamento()
-
         }
 
     }
 
+    private fun verificarAgendamentoExistente(idEspecialidade: String, callback: (Boolean) -> Unit) {
+        val dbREF = database.getReference("pacientes")
+
+        dbREF.child(uidPaciente.toString()).child("agendamentos")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    var possuiAgendamento = false
+
+                    for (agendamento in snapshot.children) {
+                        val idEsp = agendamento.child("idEspecialidade").value.toString()
+                        val concluido = agendamento.child("concluido").value as? Boolean ?: false
+
+                        if (idEsp == idEspecialidade && !concluido) {
+                            possuiAgendamento = true
+                            break
+                        }
+                    }
+                    callback(possuiAgendamento)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    callback(false)
+                }
+            })
+    }
+
+    private fun configurarCliqueEspecialidade(botao: com.google.android.material.button.MaterialButton, especialidade: String) {
+        botao.setOnClickListener {
+            verificarAgendamentoExistente(especialidade) { temAgendamento ->
+                if (temAgendamento) {
+                    binding.textAgendaIndisponivel.text = "Você já possui um agendamento \n para esta especialidade."
+                    mudarVisibilidadeCamposAgendaIndisponivel(false)
+                } else {
+                    buscarMedicos(especialidade)
+                    idEspecialidadeSelecionada = especialidade
+                    atualizarBotoes(botao)
+                }
+            }
+        }
+    }
+
+
     private fun buscarMedicos(especialidade: String) {
+
         ref.child(especialidade).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 listaMedicos.clear()
@@ -137,11 +166,8 @@ class AgendarFragment : Fragment() {
                         listaMedicos.add(Medico(uid, nome.toString()))
                     }
                 }
-//
-//                for (medico in listaMedicos) {
-//                    println("UID: ${medico.uid}, Nome: ${medico.nome}")
-//                }
                 if (listaMedicos.isEmpty()) {
+                    binding.textAgendaIndisponivel.setText("A especialidade escolhida \n não possui agenda.")
                     mudarVisibilidadeCamposAgendaIndisponivel(false)
                 } else {
                     popularDropdownMedicos()
@@ -329,9 +355,6 @@ class AgendarFragment : Fragment() {
             binding.btnMarcarAgendamento.isEnabled = false
             return
         }
-        val user = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
-        val uidPaciente = user?.uid ?: return
-
 
         val agendamento = AgendamentoDto(
             data = dataSelecionada,
@@ -346,7 +369,7 @@ class AgendarFragment : Fragment() {
         var dbREF = database.getReference("pacientes")
 
         val novoAgendamentoRef = dbREF
-            .child(uidPaciente)
+            .child(uidPaciente.toString())
             .child("agendamentos")
             .push()
 
