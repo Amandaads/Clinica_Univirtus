@@ -21,6 +21,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -83,7 +85,7 @@ class AgendamentosFragment : Fragment() {
                         val uid = FirebaseAuth.getInstance().currentUser?.uid
                         val database = FirebaseDatabase.getInstance().reference
 
-                        // 1. Caminho do agendamento do paciente (para deletar)
+                        // Caminho do agendamento do paciente (para deletar)
                         val refAgendamentoPaciente =
                             database.child("pacientes/$uid/agendamentos/${agendamento.uid}")
 
@@ -99,7 +101,7 @@ class AgendamentosFragment : Fragment() {
                             "medicos/${agendamento.idEspecialidade}/${agendamento.idMedico}/possuiAgenda" to true
                         )
 
-                        // 3. Executa tudo em uma única operação de rede
+                        // Executa tudo em uma única operação de rede
                         database.updateChildren(atualizacoes)
                             .addOnSuccessListener {
                                 if (_binding != null) {
@@ -137,8 +139,22 @@ class AgendamentosFragment : Fragment() {
                     _binding?.let { binding ->
                         lista.clear()
                         for (agendamentoSnap in snapshot.children) {
+                            // se estiver concluido, pular
                             if (agendamentoSnap.child("concluido").value == true) continue
+
                             val agendamento = agendamentoSnap.getValue(Agendamento::class.java)
+
+                            // se estiver aberto, marcar concluido e pular
+                            val formato = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+                            val dataHoraAgendamentoBancoStr = "${agendamento?.data} ${agendamento?.hora}"
+                            val dataHoraAgendamentoBancoMs = formato.parse(dataHoraAgendamentoBancoStr)?.time
+                            val dataHoraAgoraMs = System.currentTimeMillis()
+                            if (dataHoraAgendamentoBancoMs != null &&
+                                dataHoraAgendamentoBancoMs < dataHoraAgoraMs) {
+                                agendamentoSnap.ref.child("concluido").setValue(true)
+                                continue
+                            }
+
                             agendamento?.let {
                                 it.uid = agendamentoSnap.key.toString()
                                 lista.add(it)
