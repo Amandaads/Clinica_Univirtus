@@ -54,4 +54,5 @@
     <string name="hora_atendimento_sabado">08h às 12h</string>
     <string name="hora_atendimento_domingo">fechado</string>
     <string name="desenvolvido_por">Desenvolvido por:</string>
+    <string name="email_text">Respondemos em até 24 hrs</string>
 </resources>

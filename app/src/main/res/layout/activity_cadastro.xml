@@ -65,505 +65,500 @@
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/txt_nome"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        android:text="@string/nome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_nome_constraint"
-        android:layout_width="173dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        app:boxBackgroundMode="outline"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nome">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_nome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textPersonName"
-            android:nextFocusForward="@+id/edit_sobrenome"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/txt_sobrenome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="100dp"
-        android:labelFor="@+id/edit_sobrenome"
-        android:text="@string/sobrenome"
-        app:layout_constraintStart_toEndOf="@+id/txt_nome"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_sobrenome_constraint"
-        android:layout_width="189dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        app:boxBackgroundMode="outline"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/edit_nome_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/txt_sobrenome">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_sobrenome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textPersonName"
-            android:nextFocusForward="@+id/edit_data_nascimento"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/txt_data_nascimento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/data_nascimento"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_nome_constraint" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_data_nascimento_constraint"
-        android:layout_width="173dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        android:inputType="text"
-        app:boxBackgroundMode="outline"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_data_nascimento">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_data_nascimento"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:nextFocusForward="@+id/editTextPhone"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/txt_telefone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/telefone"
-        app:layout_constraintStart_toEndOf="@+id/txt_data_nascimento"
-        app:layout_constraintTop_toBottomOf="@+id/edit_sobrenome_constraint" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextPhone_constraint"
-        android:layout_width="189dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:inputType="phone"
-        app:boxBackgroundMode="outline"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/edit_data_nascimento_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/txt_telefone">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:nextFocusForward="@+id/edit_email"
-            android:padding="10dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/txt_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/email"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_data_nascimento_constraint" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_email_constraint"
-        android:layout_width="match_parent"
-        android:layout_height="47dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
+        android:layout_height="0dp"
+        android:paddingTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_email">
+        app:layout_constraintTop_toBottomOf="@+id/view">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_email"
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/txt_nome"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:nextFocusForward="@+id/edit_cpf"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="@string/nome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_cpf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/cpf"
-        app:layout_constraintEnd_toStartOf="@+id/txt_senha"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_email_constraint" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_nome_constraint"
+            android:layout_width="173dp"
+            android:layout_height="48dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nome">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_cpf_constraint"
-        android:layout_width="173dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cpf">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/edit_sobrenome"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_cpf"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txt_sobrenome"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:nextFocusForward="@+id/edit_senha"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="151dp"
+            android:labelFor="@+id/edit_sobrenome"
+            android:text="@string/sobrenome"
+            app:layout_constraintStart_toEndOf="@+id/txt_nome"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_sobrenome_constraint"
+            android:layout_width="189dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/edit_nome_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/txt_sobrenome">
 
-    <TextView
-        android:id="@+id/txt_senha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/senha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_email_constraint" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_sobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/edit_data_nascimento"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_senha_constraint"
-        android:layout_width="190dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/hint_senha"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:endIconMode="password_toggle"
-        app:hintTextColor="@color/cinza_hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/edit_cpf_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/txt_senha">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_senha"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txt_data_nascimento"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textPassword"
-            android:nextFocusForward="@+id/edit_rua"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="8dp"
+            android:text="@string/data_nascimento"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_nome_constraint" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_data_nascimento_constraint"
+            android:layout_width="173dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="text"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_data_nascimento">
 
-    <TextView
-        android:id="@+id/txt_rua"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/rua"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_cpf_constraint" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_data_nascimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@+id/editTextPhone"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_rua_constraint"
-        android:layout_width="267dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        android:inputType="text"
-
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_rua">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_rua"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txt_telefone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:nextFocusForward="@+id/edit_numero"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/telefone"
+            app:layout_constraintStart_toEndOf="@+id/txt_data_nascimento"
+            app:layout_constraintTop_toBottomOf="@+id/edit_sobrenome_constraint" />
 
-    <TextView
-        android:id="@+id/txt_numeroCasa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/numero"
-        app:layout_constraintStart_toEndOf="@+id/edit_rua_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/edit_cpf_constraint" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextPhone_constraint"
+            android:layout_width="189dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:inputType="phone"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/edit_data_nascimento_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/txt_telefone">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_numero_constraint"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_rua_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/txt_numeroCasa">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@+id/edit_email"
+                android:padding="10dp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_numero"
-            android:layout_width="match_parent"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:nextFocusForward="@+id/edit_bairro"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="8dp"
+            android:text="@string/email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_data_nascimento_constraint" />
 
-    <TextView
-        android:id="@+id/txt_bairro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:autofillHints="city"
-        android:labelFor="@+id/edit_cidade"
-        android:text="@string/bairro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_rua_constraint" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_bairro_constraint"
-        android:layout_width="180dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_bairro">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_bairro"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_email_constraint"
             android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@+id/edit_cpf"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_cpf"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textPersonName"
-            android:nextFocusForward="@+id/edit_cidade"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/cpf"
+            app:layout_constraintEnd_toStartOf="@+id/txt_senha"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email_constraint" />
 
-    <TextView
-        android:id="@+id/txt_cidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/cidade"
-        app:layout_constraintStart_toEndOf="@+id/edit_bairro_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/edit_numero_constraint" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_cpf_constraint"
+            android:layout_width="173dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cpf">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_cidade_constraint"
-        android:layout_width="187dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_bairro_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cidade">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_cpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:nextFocusForward="@+id/edit_senha"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_cidade"
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/txt_senha"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textPersonName"
-            android:nextFocusForward="@+id/edit_uf"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/senha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email_constraint" />
 
-    <TextView
-        android:id="@+id/txt_uf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/uf"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_cidade_constraint" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_senha_constraint"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="@string/hint_senha"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:endIconMode="password_toggle"
+            app:hintTextColor="@color/cinza_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/edit_cpf_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/txt_senha">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_uf_constraint"
-        android:layout_width="180dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_uf">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:nextFocusForward="@+id/edit_rua"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_uf"
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/txt_rua"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="textPersonName"
-            android:nextFocusForward="@+id/edit_Cep"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/rua"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_cpf_constraint" />
 
-    <TextView
-        android:id="@+id/txt_cep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/cep"
-        app:layout_constraintStart_toEndOf="@+id/edit_uf_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/edit_bairro_constraint" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_rua_constraint"
+            android:layout_width="267dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="text"
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_Cep_constraint"
-        android:layout_width="187dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_uf_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/txt_cep">
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_rua">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_Cep"
-            android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_rua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@+id/edit_numero"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_numeroCasa"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/numero"
+            app:layout_constraintStart_toEndOf="@+id/edit_rua_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/edit_cpf_constraint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_numero_constraint"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_rua_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/txt_numeroCasa">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_numero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@+id/edit_bairro"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_bairro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="city"
+            android:labelFor="@+id/edit_cidade"
+            android:text="@string/bairro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_rua_constraint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_bairro_constraint"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_bairro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_bairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/edit_cidade"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_cidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/cidade"
+            app:layout_constraintStart_toEndOf="@+id/edit_bairro_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/edit_numero_constraint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_cidade_constraint"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_bairro_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cidade">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_cidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/edit_uf"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_uf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/uf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_cidade_constraint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_uf_constraint"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_uf">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_uf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@+id/edit_Cep"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txt_cep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/cep"
+            app:layout_constraintStart_toEndOf="@+id/edit_uf_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/edit_bairro_constraint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_Cep_constraint"
+            android:layout_width="187dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_uf_constraint"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cep">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_Cep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:nextFocusForward="@+id/btn_cadastro"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_cadastro"
+            android:layout_width="372dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/green"
             android:imeOptions="actionNext"
-            android:inputType="number"
-            android:nextFocusForward="@+id/btn_cadastro"
-            android:padding="10dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:nextFocusForward="@+id/txt_faca_login"
+            android:text="@string/botaoCadastro"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_uf_constraint" />
 
-    <Button
-        android:id="@+id/btn_cadastro"
-        android:layout_width="372dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/green"
-        android:imeOptions="actionNext"
-        android:nextFocusForward="@+id/txt_faca_login"
-        android:text="@string/botaoCadastro"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_uf_constraint" />
+        <TextView
+            android:id="@+id/txt_ja_possui_conta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/ja_possui_conta"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.357"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cadastro" />
 
-    <TextView
-        android:id="@+id/txt_ja_possui_conta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/ja_possui_conta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cadastro" />
-
-    <TextView
-        android:id="@+id/txt_faca_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:imeOptions="actionDone"
-        android:text="@string/faca_login"
-        android:textColor="@color/blue_link"
-        app:layout_constraintStart_toEndOf="@+id/txt_ja_possui_conta"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cadastro" />
+        <TextView
+            android:id="@+id/txt_faca_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:imeOptions="actionDone"
+            android:text="@string/faca_login"
+            android:textColor="@color/blue_link"
+            app:layout_constraintStart_toEndOf="@+id/txt_ja_possui_conta"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cadastro" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
