@@ -136,6 +136,7 @@ class AgendarFragment : Fragment() {
 
     private fun configurarCliqueEspecialidade(botao: com.google.android.material.button.MaterialButton, especialidade: String) {
         botao.setOnClickListener {
+            atualizarBotoes(botao)
             verificarAgendamentoExistente(especialidade) { temAgendamento ->
                 if (temAgendamento) {
                     binding.textAgendaIndisponivel.text = "Você já possui um agendamento \n para esta especialidade."
@@ -143,7 +144,6 @@ class AgendarFragment : Fragment() {
                 } else {
                     buscarMedicos(especialidade)
                     idEspecialidadeSelecionada = especialidade
-                    atualizarBotoes(botao)
                 }
             }
         }
